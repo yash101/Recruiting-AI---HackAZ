@@ -23,9 +23,6 @@ EMBEDDING_DIM = 100
 VALIDATION_SPLIT = 0.2
 
 
-
-
-
 print('STAGE 1: Indexing vectors for words')
 
 embeddingsIdx = {}
@@ -132,6 +129,9 @@ x = MaxPooling1D(35)(x)
 
 x = Flatten()(x)
 x = Dense(128, activation='relu')(x)
+x = Dense(128, activation='relu')(x)
+x = Dense(128, activation='relu')(x)
+x = Dense(128, activation='relu')(x)
 preds = Dense(len(labelsIdx), activation='softmax')(x)
 
 model = Model(sequenceInput, preds)
@@ -140,4 +140,4 @@ model.compile(loss='categorical_crossentropy',
 		optimizer='rmsprop',
 		metrics=['acc'])
 
-model.fit(xTrain, yTrain, validation_data=(xVal, yVal), nb_epoch=200, batch_size=128)
+model.fit(xTrain, yTrain, validation_data=(xVal, yVal), nb_epoch=4000, batch_size=128)
