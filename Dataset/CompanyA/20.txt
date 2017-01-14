@@ -1,0 +1,3 @@
+Education: Computer Science, Mathematics
+Skills: Problem Solving, C, C++, Python, Java
+Interests: Cryptography, Machine Learning, Artificial Intelligence, Data Analysis

@@ -1,0 +1,3 @@
+Education: Computer Science
+Skills: C++, C, SQL
+Interests: Database Management, Data Analysis, Online Security

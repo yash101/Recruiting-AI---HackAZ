@@ -1,0 +1,3 @@
+Education: Computer Systems Engineering
+Programming Skills: C, C++
+Interests: Embeded Systems, Electronics

@@ -1,0 +1,3 @@
+Education: Computer Science
+Skills: Javascript, Python, CSS, HTML
+Interests: User Experience, User Interface, Web Programming

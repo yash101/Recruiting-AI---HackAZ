@@ -1,0 +1,3 @@
+Education: Computer Science
+Programming Skills: C++, Java
+Interests: Artificial Intelligence, Automation
