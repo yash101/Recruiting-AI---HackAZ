@@ -84,4 +84,4 @@ sequenceInput = Input(shape=(MAX_SEQUENCE_LENGTH,), dtype='int32')
 embed = embeddingLayer(sequenceInput)
 
 model = Model(input=sequenceInput,output=embed)
-print(model.predict(data[:1000]))
+print(model.predict(data[:1000])[0][0])

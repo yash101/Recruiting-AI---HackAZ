@@ -1,3 +1,0 @@
-Education: Computer Science 
-Skills: CSS, HTML, ReactJS, Javascript
-Interests: Web Programming, Web Design 
