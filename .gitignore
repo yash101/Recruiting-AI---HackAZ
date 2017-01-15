@@ -1,5 +1,6 @@
 *.swp
 *.swo
 *.tmp
+*.pyc
 glove*
 Resumes_old
