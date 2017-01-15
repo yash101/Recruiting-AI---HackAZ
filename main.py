@@ -7,10 +7,12 @@ from keras.preprocessing.sequence import pad_sequences
 
 from keras.utils.np_utils import to_categorical
 
-from keras.layers import Dense, Input, Flatten
+from keras.layers import Dense, Input, Flatten, Dropout
 from keras.layers import Conv1D, MaxPooling1D, Embedding
 
 from keras.models import Model
+
+from keras.optimizers import SGD, RMSprop
 
 import sys
 
@@ -129,15 +131,17 @@ x = MaxPooling1D(35)(x)
 
 x = Flatten()(x)
 x = Dense(128, activation='relu')(x)
-x = Dense(128, activation='relu')(x)
-x = Dense(128, activation='relu')(x)
+x = Dropout(0.1)(x)
 x = Dense(128, activation='relu')(x)
 preds = Dense(len(labelsIdx), activation='softmax')(x)
 
 model = Model(sequenceInput, preds)
 
+optim = RMSprop(lr=0.001, rho=0.9, epsilon=1e-8, decay=0.0)
 model.compile(loss='categorical_crossentropy',
-		optimizer='rmsprop',
+		optimizer=optim,
 		metrics=['acc'])
 
-model.fit(xTrain, yTrain, validation_data=(xVal, yVal), nb_epoch=4000, batch_size=128)
+model.fit(xTrain, yTrain, validation_data=(xVal, yVal), nb_epoch=100, batch_size=128)
+
+model.save_weights('amazing_weights.h5')
